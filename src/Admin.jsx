@@ -12,7 +12,7 @@ export default function Admin() {
     const [orders, setOrders] = useState([]);
     useEffect(() => { 
         axios
-          .get("http://localhost:8080/allorders")
+          .get("https://cakedelights-backend.onrender.com/allorders")
           .then((response) => {
             setOrders(response.data);
             console.log('orders: ', orders);

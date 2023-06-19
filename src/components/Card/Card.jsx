@@ -21,7 +21,7 @@ export default function Card(props) {
         try {
           const email = loginEmail;
           console.log('email: '+email)
-          const verifyUrl = "http://localhost:8080/verify";
+          const verifyUrl = "https://cakedelights-backend.onrender.com/verify";
           const { data } = await axios.post(verifyUrl, { response: response,amount:props.price[0][size],email:email, name:props.name, size:size});
           console.log(data);
           console.log("loginEmail: "+email);
@@ -49,7 +49,7 @@ export default function Card(props) {
   const handlePayment = async (amount) => {
     if (loggedIn == true) {
       try {
-        const orderUrl = "http://localhost:8080/orders";
+        const orderUrl = "https://cakedelights-backend.onrender.com/orders";
         const { data } = await axios.post(orderUrl, { amount: amount });
         console.log(data);
         initPayment(data.data);

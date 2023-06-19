@@ -15,7 +15,7 @@ export default function Login() {
 
  async function onSubmit() {
 await axios
-      .post("http://localhost:8080/login", { email: email, otp: otp })
+      .post("https://cakedelights-backend.onrender.com/login", { email: email, otp: otp })
       .then(function (response) {
         console.log(response.data);
         if (response.data == "wrong otp") {
@@ -37,7 +37,7 @@ await axios
 
   async function mail() {
     await axios
-      .post("http://localhost:8080/mail", { username: email })
+      .post("https://cakedelights-backend.onrender.com/mail", { username: email })
       .then((response) => {
         console.log(response.data);
         if (response.data == "mail sent") {

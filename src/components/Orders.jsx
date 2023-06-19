@@ -10,7 +10,7 @@ export default function Orders() {
 
   useEffect(() => { 
     axios
-      .post("http://localhost:8080/myorders", { email: loginEmail })
+      .post("https://cakedelights-backend.onrender.com/myorders", { email: loginEmail })
       .then((response) => {
         setOrders(response.data);
         console.log('orders: ', orders);
